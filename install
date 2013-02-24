@@ -1,0 +1,368 @@
+# Ludwig Weinzierl, 2013
+
+
+# Prepare installation
+######################
+
+apt-get install aptitude
+
+aptitude update
+aptitude upgrade
+#aptitude dist-ugprade
+
+
+# Things that should be installed by default
+############################################
+
+aptitude install bash
+aptitude install rsync
+aptitude install perl
+aptitude install openssh-client
+aptitude install gzip
+aptitude install findutils # find, xargs et al.
+aptitude install bsdmainutils # cal et al.
+
+
+# Essential software
+####################
+
+aptitude install vim
+
+aptitude install git
+aptitude install rsync
+aptitude install tmux
+
+aptitude install nmap
+aptitude install whois
+aptitude install dnsutils
+aptitude install curl
+aptitude install nfs-common
+
+aptitude install hunspell  #Install dictionaries?
+aptitude install par
+aptitude install diction
+aptitude install wordnet
+
+aptitude install bzip2
+aptitude install p7zip
+aptitude install unzip
+
+aptitude install gcc
+aptitude install gdb
+aptitude install make
+
+aptitude install alsa-utils
+
+aptitude install dcraw
+aptitude install pngcrush
+
+aptitude install deborphan
+aptitude install apt-show-versions
+aptitude install apt-rdepends
+
+aptitude install tofrodos
+aptitude install apcalc
+
+# Server
+aptitude install nginx
+aptitude install pdns-server
+
+# Desktop (X11)
+
+aptitude install rxvt-unicode
+aptitude install gvim # alternatively use vim-gtk or vim-lesstif
+aptitude install iceweasel # firefox (mozilla.debian.net)
+
+aptitude install evince
+aptitude purge i3  # currently compiled manually, see below for deps
+aptitude install i3lock # doesn't technically depend on X11
+aptitude install i3status
+aptitude install dmenu # doesn't technically depend on X11
+aptitude install parcellite
+aptitude install feh
+aptitude install vlc
+aptitude install inkscape
+aptitude install imagemagick # Depends heavily on X11
+
+
+# Optional, but very useful software
+####################################
+
+# Server
+#aptitude install bitcoind # squeeze-backports, be careful with purge! 
+aptitude install ncmpcpp
+aptitude install youtube-dl
+aptitude install fortune
+aptitude install gddrescue
+aptitude install tree
+aptitude install ncdu
+aptitude install jhead
+aptitude install libjpeg-progs # Provides jpegtran
+aptitude install libimage-exiftool-perl # Provides exiftool
+aptitude install exiv2
+
+aptitude purge openssh-server
+aptitude purge lua
+aptitude purge yafray
+aptitude purge atop # Pulls in cron
+aptitude purge logrotate # Pulls in cron
+aptitude purge valgrind
+aptitude purge oprofile
+aptitude purge sysstat
+aptitude purge nasm
+aptitude purge dtach
+
+# Mail handling is ugly, avoid it when you can
+aptitude purge mutt      #Pulls in exim
+aptitude purge fetchmail
+aptitude purge procmail
+aptitude purge exim4
+
+
+# Desktop (X11)
+aptitude install gnuplot
+aptitude install graphviz
+aptitude install vlc
+aptitude install ffmpeg
+aptitude install fontforge
+aptitude install r-base
+aptitude install filezilla
+aptitude install grafx2
+aptitude install grabc
+#aptitude purge gpick # since wheezy, compiled manually, see below for deps
+aptitude install golly
+aptitude install epiphany
+
+# Audio
+aptitude install mpd  # Depends on X11 via pulseaudio (sigh)
+aptitude install csound # Depends on X11 via pulseaudio (sigh)
+aptitude install sox # Depends on X11 via pulseaudio (sigh)
+aptitude install pulseaudio # Depends on X11, why, oh why?
+
+
+# Dependencies
+##############
+
+# Dependencies to compile gpick
+#aptitude purge libgtk2.0-dev
+#aptitude purge mercurial
+#aptitude purge scons
+#aptitude purge gettext
+#aptitude purge lua5.2 # since wheezy
+
+# Dependencies to compile i3
+#aptitude purge flex
+#aptitude purge bison
+#aptitude purge libev-dev
+#aptitude purge libyajl-dev
+
+#aptitude purge libxcb-keysyms1-dev
+#aptitude purge libpango1.0-dev
+#aptitude purge libxcb-aux0-dev
+#aptitude purge libxcb-icccm1-dev
+#aptitude purge libstartup-notification0-dev
+#aptitude purge libxcb-randr0-dev
+#aptitude purge libxcb-xinerama0-dev
+#aptitude purge libxcursor-dev
+
+# Dependencies to compile feh
+#aptitude purge libimlib2-dev
+
+
+# Experimental
+##############
+
+# Current
+aptitude install suckless-tools
+aptitude install libfftw3-dev
+aptitude install xnee
+aptitude install xdotool
+aptitude install darktable
+
+# Experiment ended
+aptitude purge argyll
+aptitude purge pcmanfm
+aptitude purge rxvt
+aptitude purge gdmap
+aptitude purge mplayer
+aptitude purge html-xml-utils
+aptitude purge xcolorsel
+aptitude purge swish++
+aptitude purge w3m
+aptitude purge w3m-img
+aptitude purge screenruler
+aptitude purge ttf-inconsolata
+#aptitude purge fonts-inconsolata # since wheezy
+aptitude purge flvtool2
+aptitude purge viewglob
+aptitude purge newsbeuter
+#aptitude install gtk-vector-screenshot # since wheezy
+
+
+# Good alternatives
+###################
+
+aptitude purge mpc # Replaced by ncmpcpp
+#aptitude purge luakit # Replaced by iceweasel, since wheezy
+aptitude purge uzbl # Replaced by iceweasel
+#aptitude purge surf # since wheezy, replace by iceweasel
+aptitude purge awesome # Replaced by i3
+aptitude purge awesome-extra
+aptitude purge htop # Replaced by atop
+aptitude purge speedcrunch # Replaced by apcalc
+aptitude purge mplayer # Replaced by vlc
+#aptitude purge mupdf # squeeze-backports, replaced by evince
+aptitude purge zsh # Replaced by bash
+aptitude purge xterm # Replaced by urxvt
+aptitude purge bc # Replaced by apcalc
+aptitude purge screen # Replaced by tmux
+#aptitude purge conky # contrib, replaced by i3status
+aptitude purge dzen2 # Replaced by i3status
+aptitude purge xpdf # Replaced by evince
+
+# Ugly packaging, but good software and therefore tolerated
+aptitude install texlive # TeX is bloated but diffcult to avoid
+aptitude purge blender # bloated
+aptitude install gimp # bloated
+aptitude purge eclipse # bloated
+aptitude purge gnumeric # bloated
+aptitude purge pdftk # bloated
+#nodejs		# no package
+#luxrender	# no package
+#topmod         # no Linux version
+#echo
+#echo "Trying to purge python."
+#echo "Please cancel if this would remove important pkgs."
+#echo
+#aptitude purge python # Bloated
+
+echo
+echo "Trying to purge cron."
+echo "Please cancel if this would remove important pkgs."
+echo
+aptitude purge cron
+
+echo
+echo "Trying to purge exim."
+echo "Please cancel if this would remove important pkgs."
+echo
+aptitude purge exim4-base
+
+# Forbidden
+aptitude purge chromium-browser # Privacy
+aptitude purge emacs # Bloated
+aptitude purge gnome # Bloated
+aptitude purge kde # Bloated
+#aptitude purge unity # only ubuntu, bloated
+aptitude purge kdirstat	# No current package, only KDE
+aptitude purge java-common # Bloated
+aptitude purge eclipse # Bloated
+aptitude purge taskjuggler # No current package, only KDE
+aptitude purge openvpn # Security
+aptitude purge irssi # Security
+aptitude purge rtorrent	# Security
+aptitude purge lighttpd	# Abandoned
+aptitude purge bitlbee # Security
+aptitude purge mc # Just because
+aptitude purge thunar # Requires apt-pinning dependencies on squeeze
+#skype # Security
+#blink # SIP client http://icanblink.com/, security
+
+# Debian packages not in stable/main
+###################################
+
+#cp -i ~/.dotfiles/sources.list /etc/apt/sources.list
+#aptitude update
+
+# Non-free
+##########
+
+#aptitude purge xfractint
+#aptitude purge povray
+
+
+# Apt pinning
+#############
+
+# Set default release
+#su -
+#cat >/etc/apt/apt.conf.d/local <<END
+#APT::Default-Release "stable";
+#END
+#cp -i ~/.dotfiles/preferences /etc/apt/preferences.d/preferences
+#aptitude update
+
+# Fetch keys
+#aptitude install pkg-mozilla-archive-keyring
+#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E5E17B
+
+
+# Proprietary
+#############
+
+echo "Install Mathematica (use install-proprietary.sh)"
+echo "Install Intel C compiler (use install-proprietary.sh)"
+echo "Install Bibble 5 (use install-proprietary.sh)"
+
+# Clean up
+##########
+
+aptitude purge --purge-unused
+# libimage-exiftool-perl (which is no lib) is guessed accidentally
+aptitude purge `deborphan --guess-all -A libimage-exiftool-perl`
+aptitude purge `deborphan --guess-all -A libimage-exiftool-perl`
+aptitude purge `deborphan --guess-all -A libimage-exiftool-perl`
+aptitude purge `deborphan --guess-all -A libimage-exiftool-perl`
+aptitude purge `deborphan --guess-all -A libimage-exiftool-perl`
+aptitude clean
+
+aptitude update
+aptitude upgrade
+#aptitude dist-ugprade
+
+
+
+# Notable Software I don't use anymore
+######################################
+
+# Software I used professionally and I am an expert in
+# FEMAP http://www.plm.automation.siemens.com/en_us/products/velocity/femap/
+# MSC Nastran http://www.mscsoftware.com/product/msc-nastran
+# MSC Patran  http://www.mscsoftware.com/product/patran
+# DOORS http://www-01.ibm.com/software/awdtools/doors/productline/
+# BMC Remedy http://www.bmc.com/products/product-listing/it-service-management-suite.html
+
+# Old software I find exceptionally good or I just had a lot of fun with
+# SoftICE http://blogs.msdn.com/b/matt_pietrek/archive/2006/04/11/573621.aspx
+# Everything on my Palm III
+# dta ftp://ftp.povray.org/pub/povray/utilities/dta/
+# GWS http://www.mindworkshop.com/gwspro.html
+# IrfanView http://www.irfanview.com/
+# POV-Ray http://www.povray.org/
+# Fractint http://www.fractint.org/
+# Turbo Pascal http://en.wikipedia.org/wiki/Turbo_Pascal
+# C64 Basic and 6510 ASM
+
+# Other useful stuff
+# TrueGrain http://grubbasoftware.com/
+# FileSync http://www.fileware.com
+# Wood Workshop  http://www.spiralgraphics.biz/ww_overview.htm
+
+# Configuration
+###############
+
+# Add user to www-data group
+#adduser $USER www-data
+#chown -R www-data:www-data /var/www
+
+# Disable mpd daemon, because I like to run mpd as user
+#service mpd stop
+#update-rc.d mpd disable
+
+# Fetch dotfiles
+# Fetch lwbin
+
+# Things to do manually
+#######################
+echo "If there is no sound set volume levels in alsamixer (and don't blame pulseaudio prematurely;-)"
+echo "Install Zotero"

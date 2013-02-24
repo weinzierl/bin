@@ -1,0 +1,4 @@
+#!/bin/sh
+# Ludwig Weinzierl, 2013
+
+~/surf/surf-0.5/surf http://www.facebook.com

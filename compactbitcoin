@@ -1,0 +1,5 @@
+#!/bin/sh
+# Ludwig Weinzierl, 2013
+
+rm ~/.bitcoin/blk000?.dat
+rm ~/.bitcoin/blkindex.dat
